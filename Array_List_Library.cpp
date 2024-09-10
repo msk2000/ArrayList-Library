@@ -117,12 +117,26 @@ class ArrayList
 
     }
 
-
-
-
-
-
-
-
+    // Search through the list using index
+    int FindValueAtIndex(int* data, int listLength, int index)
+    {
+        if(index < listLength)
+        {
+            std::cout<<"Value found at index "<< index<<" is "<< data[index] <<std::endl;
+            return data[index];
+        }
+        else
+        {
+            std::cout<<"Index is out of range!"<<std::endl;
+            return -999999; 
+        }
     }
+
+
+
+
+
+
+
+
 };
