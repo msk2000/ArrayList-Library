@@ -122,7 +122,7 @@ class ArrayList
     }
 
     // Search through the list using index
-    int FindValueAtIndex(int* data, int listLength, int index)
+    int FindValueAtIndex(int index)
     {
         if(index < listLength)
         {
@@ -137,14 +137,18 @@ class ArrayList
     }
 
     //Search for an index given a value
-    int FindIndexWithValue(int* data,int listLength, int value)
+    int FindIndexWithValue(int value)
     {
         for (int i = 0; i < listLength; i++)
         {
             if(data[i] == value)
             {
                 std::cout<<"Element at index "<< i << " has a value of "<< value << std::endl;
-                return i;
+                if (i == listLength-1) // To detect multiple indexes with the same value
+                {
+                    return i;
+                }
+                
             }
             
         }
@@ -189,6 +193,16 @@ int main()
   
     list.PrintList();
 
+    list.RemoveElementAtIndex(1);
+
+    list.PrintList();
+
+    list.FindValueAtIndex(1);
+
+    
+    list.InsertElement(10,2);
+    list.FindIndexWithValue(10);
+    list.PrintList();
 
     return 0;
 }
