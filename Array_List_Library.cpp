@@ -132,6 +132,22 @@ class ArrayList
         }
     }
 
+    //Search for an index given a value
+    int FindIndexWithValue(int* data,int listLength, int value)
+    {
+        for (int i = 0; i < listLength; i++)
+        {
+            if(data[i] == value)
+            {
+                std::cout<<"Element at index "<< i << " has a value of "<< value << std::endl;
+                return i;
+            }
+            
+        }
+
+        std::cout << "No Element matches the value "<< value << std::endl;
+        return -1;
+    }
 
 
 
