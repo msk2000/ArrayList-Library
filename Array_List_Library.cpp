@@ -149,6 +149,19 @@ class ArrayList
         return -1;
     }
 
+    // Print the contents of the current list
+    void PrintList(int* data, int listLength)
+    {
+        if(listLength == 0)
+        {
+            std::cout << "List is empty!"<<std::endl;
+        }
+
+        for(int i = 0; i < listLength; i++)
+        {
+            std::cout << "Value at index "<< i << "= "<< data[i]<< std::endl;
+        }
+    }
 
 
 
