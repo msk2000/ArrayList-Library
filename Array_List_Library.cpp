@@ -38,8 +38,12 @@ class ArrayList
     {
 
         //This is for sanity (no negative index!)
-        std::cerr << "Index out of range!" << std::endl;
-        return -9999; 
+        if(index < 0)
+        {
+            std::cerr << "Index out of range!" << std::endl;
+            return -9999;
+        }
+         
 
         //Safety: We can't allow list to get bigger than heap allocation. So we reallocate memory
         if(listLength+1 > arraySize)
@@ -150,7 +154,7 @@ class ArrayList
     }
 
     // Print the contents of the current list
-    void PrintList(int* data, int listLength)
+    void PrintList()
     {
         if(listLength == 0)
         {
@@ -159,13 +163,32 @@ class ArrayList
 
         for(int i = 0; i < listLength; i++)
         {
-            std::cout << "Value at index "<< i << "= "<< data[i]<< std::endl;
+            std::cout << "Value at index "<< i << " = "<< data[i]<< std::endl;
         }
     }
 
-
-
-
+    // Getter function for list length
+    int getListLength()
+    {
+        return listLength;
+    }
 
 
 };
+
+//================= Quick testing with main =====================\\
+
+int main()
+{
+    ArrayList list;
+
+    list.InsertElement(10, 0);
+    list.InsertElement(20, 1);
+    list.InsertElement(30, 2);
+
+  
+    list.PrintList();
+
+
+    return 0;
+}
